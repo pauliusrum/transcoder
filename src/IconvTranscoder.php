@@ -29,7 +29,7 @@ class IconvTranscoder implements TranscoderInterface
                 if (1 === preg_match('/Wrong charset, conversion (.+) is/', $message, $matches)) {
                     throw new UnsupportedEncodingException($matches[1], $message);
                 } else {
-                    throw new IllegalCharacterException($string, $message);
+                    throw new IllegalCharacterException($message);
                 }
             },
             E_NOTICE | E_USER_NOTICE
